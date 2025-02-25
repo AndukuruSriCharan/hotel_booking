@@ -3,7 +3,7 @@ import Room from "../models/Room.js";
 import { createError } from "../utils/error.js";
 import User from '../models/User.js'
  
-// 📌 Book a Room
+//  Book a Room
 export const bookRoom = async (req, res, next) => {
   try {
     // console.log(req.body.user)
@@ -30,7 +30,7 @@ export const bookRoom = async (req, res, next) => {
 };
  
  
-// 📌 Cancel a Booking
+//  Cancel a Booking
 export const cancelBooking = async (req, res, next) => {
   try {
     await Booking.findByIdAndDelete(req.params.id);
@@ -40,7 +40,7 @@ export const cancelBooking = async (req, res, next) => {
   }
 };
  
-// 📌 Get User's Bookings
+//  Get User's Bookings
 export const getUserBookings = async (req, res, next) => {
   try {
     const bookings = await Booking.find({ user: req.user.id });
